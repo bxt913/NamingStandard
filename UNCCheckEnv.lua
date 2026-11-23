@@ -496,7 +496,8 @@ test("loadfile", {}, function()
 	assert(err and not callback, "Did not return an error message for a compiler error")
 end)
 
-test("dofile", {})
+test("dofile", {
+})
 
 -- Input
 
@@ -668,7 +669,7 @@ end)
 test("identifyexecutor", {"getexecutorname"}, function()
 	local name, version = identifyexecutor()
 	assert(type(name) == "string", "Did not return a string for the name")
-	return type(version) == "string" and "Returns version as a string" or "Does not return version"
+	return type(version) == "string" and name.." "..version or "Does not return version"
 end)
 
 test("lz4compress", {}, function()
